@@ -13,7 +13,7 @@ module.exports = {
 
     getPoste : (async(req,res) => {
         try {
-            const data = await Poste.find({})
+            const data = await Poste.find()
             res.status(200).send({message:"OK", data})
         } catch (error) {
             res.status(500).send(error)

@@ -11,9 +11,10 @@ exports.isAuth = async(req, res, next) => {
         else {
             const user = await users.findById(dcode.id)
             req.user = user
-            next()
+            
         }
     } catch (error) {
         res.status(500).send(error)
     }
+    next()
 }
